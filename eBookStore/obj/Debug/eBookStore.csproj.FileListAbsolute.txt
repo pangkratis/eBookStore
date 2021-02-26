@@ -1,0 +1,5 @@
+C:\Users\Παγκράτης\Documents\Visual Studio 2008\Projects\eBookStore\eBookStore\bin\eBookStore.dll
+C:\Users\Παγκράτης\Documents\Visual Studio 2008\Projects\eBookStore\eBookStore\bin\eBookStore.pdb
+C:\Users\Παγκράτης\Documents\Visual Studio 2008\Projects\eBookStore\eBookStore\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Παγκράτης\Documents\Visual Studio 2008\Projects\eBookStore\eBookStore\obj\Debug\eBookStore.dll
+C:\Users\Παγκράτης\Documents\Visual Studio 2008\Projects\eBookStore\eBookStore\obj\Debug\eBookStore.pdb

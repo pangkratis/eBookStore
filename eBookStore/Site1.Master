@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="eBookStore.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <link href="css/Stylesheet1.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="topdiv">
+        <asp:Button ID="Button1" runat="server" Text="Αρχική" OnClick="HomeB_Click" />
+        <asp:Button ID="Button2" runat="server" Text="Το καταστημά μας" OnClick="ShopInfoB_Click" />
+        <asp:Button ID="Button3" runat="server" Text="Τα προιόντα μας" OnClick="ProductInfoB_Click" />
+        <asp:Button ID="Button5" runat="server" Text="Σύνδεση πελατών" OnClick="LogInB_Click" />
+    </div>
+    <div class="leftdiv">
+        <asp:ContentPlaceHolder ID="LeftContent" runat="server">          
+        </asp:ContentPlaceHolder>
+        <div>
+                <asp:LinkButton ID="link1" runat="server" style="visibility:hidden" OnClick="Link1Click">Διαχείριση Κατηγοριών</asp:LinkButton>
+                <asp:GridView
+                    ID="GridView1" runat="server" style="visibility:hidden" AutoGenerateColumns="False" 
+                    DataKeyNames="ID" DataSourceID="AccessDataSource1">
+                    <Columns>
+                        <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" 
+                            ReadOnly="True" SortExpression="ID" />
+                        <asp:HyperLinkField DataNavigateUrlFields="ID" 
+                            DataNavigateUrlFormatString="AdminCategories.aspx?id={0}" DataTextField="Name" 
+                            DataTextFormatString="{0}" HeaderText="Κατηγορίες Βιβλίων" />
+                    </Columns>
+                </asp:GridView>
+                <asp:AccessDataSource ID="AccessDataSource1" runat="server" 
+                    DataFile="ebookstoredb.mdb" SelectCommand="SELECT * FROM [category]">
+                </asp:AccessDataSource>
+            </div>
+            <div>
+                <asp:LinkButton ID="link2" runat="server" style="visibility:hidden">Διαχείριση Προιόντων</asp:LinkButton>
+                <asp:GridView
+                    ID="GridView2" runat="server" style="visibility:hidden" 
+                    AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="AccessDataSource2">
+                    <Columns>
+                        <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" 
+                            ReadOnly="True" SortExpression="ID" />
+                        <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
+                        <asp:BoundField DataField="Description" HeaderText="Description" 
+                            SortExpression="Description" />
+                        <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                        <asp:BoundField DataField="Category" HeaderText="Category" 
+                            SortExpression="Category" />
+                    </Columns>
+                </asp:GridView>
+                <asp:AccessDataSource ID="AccessDataSource2" runat="server" 
+                    DataFile="ebookstoredb.mdb" SelectCommand="SELECT * FROM [product]">
+                </asp:AccessDataSource>
+            </div>
+            <div>
+                <asp:LinkButton ID="link3" runat="server" style="visibility:hidden">Διαχείριση Παραγγελιών</asp:LinkButton>
+            </div>
+    </div>
+    <div class="maindiv">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="footerdiv">
+    </div>
+    </form>
+</body>
+</html>

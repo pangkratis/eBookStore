@@ -1,0 +1,39 @@
+﻿div.topdiv
+{
+	width:100%;
+	clear:both;
+	}
+	
+div.leftdiv
+{
+	width:20%;
+	float:left;
+	height: 19px;
+}
+div.maindiv
+{
+	width:80%;
+	float:left;
+	}
+div.footerdiv
+{
+	width:100%;
+	float:left;
+	}
+#adminmenu 
+{
+	visibility:hidden;
+
+	}
+#usermenu 
+{
+	visibility:hidden;
+	}
+#panel1
+{
+	visibility:hidden;
+	}
+#panel2
+{
+	visibility:visible;
+}
